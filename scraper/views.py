@@ -239,7 +239,7 @@ def movieDetails(request):
         mv.get_credits(id)
         mv.get_reviews(id)
         mv.get_recommendations(id)
-        # mv.get_movies(id, year)
+        mv.get_movies(id, year)
         return render(request, 'details.html', context=mv.details)
     else:
         sh = ShowDetails()
@@ -248,7 +248,7 @@ def movieDetails(request):
         sh.get_credits(id)
         sh.get_reviews(id)
         sh.get_recommendations(id)
-        # sh.get_shows(id, year)
+        sh.get_shows(id, year)
         return render(request, 'details.html', context=sh.details)
 
 
