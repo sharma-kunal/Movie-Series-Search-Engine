@@ -1,0 +1,93 @@
+.heading {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  top: 25%;
+  width: 50%;
+  height: 50%;
+}
+
+input {
+  height: 40px;
+  width: 80%;
+  border-radius: 30px;
+}
+
+button {
+  height: 40px;
+  width: 18%;
+}
+
+/* button {
+  width: 15%;
+  height: 30px;
+  margin-left: 50px;
+} */
+
+.buttons {
+  text-align: center;
+}
+
+#suggestions {
+  height: 300px;
+  margin-top: 10px;
+  overflow: auto;
+}
+
+#error {
+  visibility: hidden;
+}
+
+.row {
+  padding-left: 20px;
+  height: 90px;
+}
+
+.row:hover {
+  background: #D3D3D3;
+}
+
+img {
+  padding-top: 10px;
+  padding-left: 10px;
+  width: 70px;
+  height: 70px;
+}
+
+.movie_name {
+  font-weight: bold;
+  font-size: 20px;
+  width: 70%;
+  height: 30px;
+  margin-left: 30px;
+  padding-top: 0px;
+}
+
+.year {
+  width: 70%;
+  height: 30px;
+  margin-left: 100px;
+  margin-top: -40px;
+}
+
+.type {
+  height: 30px;
+  width: 70%;
+  margin-left: 100px;
+  margin-top: -25px;
+}
+
+.id {
+  visibility: hidden;
+}
+
+hr {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
