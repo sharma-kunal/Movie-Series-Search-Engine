@@ -13,7 +13,7 @@ This is a Movies/Series Search Engine made using Django. It searches for the Mov
 * Alt Balaji
 * Sony LIV
 
-![Demo](https://github.com/sharma-kunal/Movies-Series-Search-Engine/blob/master/readmeData/johnwick3.gif)
+![Demo](https://github.com/sharma-kunal/Movie-Series-Search-Engine/blob/master/readmeData/johnwick3.gif)
 
 
 **NOTE**
@@ -25,7 +25,7 @@ Currently some major services like Netflix and Amazon Prime Video are not includ
 
 2. Copy the key and paste it in the 'api-keys.txt' file in the place of `<your-api-key>`.
 
-![Api KEY](https://github.com/sharma-kunal/Movies-Series-Search-Engine/blob/master/readmeData/apiKey.png)
+![Api KEY](https://github.com/sharma-kunal/Movie-Series-Search-Engine/blob/master/readmeData/apiKey.png)
 
 3. You need to run the server on you machine, so for doing that, just go to the folder with `requirements.txt` file and run the command
 
@@ -42,7 +42,7 @@ python manage.py runserver 127.0.0.1:8090
 **NOTE**
 I have made the server to run on the port 8090, if you want to change the port, you also need to change the port in the file `client/index.js` in function `search` on line 34.
 
-![Port Image](https://github.com/sharma-kunal/Movies-Series-Search-Engine/blob/master/readmeData/port.png)
+![Port Image](https://github.com/sharma-kunal/Movie-Series-Search-Engine/blob/master/readmeData/port.png)
 
 5. Now just run the file `client/index.html` and the project is up and running.
 
