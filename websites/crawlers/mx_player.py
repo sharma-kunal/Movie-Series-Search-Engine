@@ -19,7 +19,7 @@ def mx_player_movie(name, id, year):
                                 'name': d['title'],
                                 'source': "mx_player",
                                 'link': url + d['shareUrl'],
-                                'logo': "/static/images/logos/mx_player.jpg"
+                                'logo': "/static/images/logos/mx_player.png"
                             }
                         else:
                             result = None
@@ -29,7 +29,7 @@ def mx_player_movie(name, id, year):
                             'name': d['title'],
                             'source': "mx_player",
                             'link': url + d['shareUrl'],
-                            'logo': "/static/images/logos/mx_player.jpg"
+                            'logo': "/static/images/logos/mx_player.png"
                         }
             return result
         except Exception:
@@ -65,7 +65,7 @@ def mx_player_show(name, id, year):
                                 'name': name,
                                 'source': "mx_player",
                                 'link': url + d['shareUrl'],
-                                'logo': "/static/images/logos/mx_player.jpg"
+                                'logo': "/static/images/logos/mx_player.png"
                             }
                         else:
                             result = None
@@ -75,7 +75,7 @@ def mx_player_show(name, id, year):
                             'name': name,
                             'source': "mx_player",
                             'link': url + d['shareUrl'],
-                            'logo': "/static/images/logos/mx_player.jpg"
+                            'logo': "/static/images/logos/mx_player.png"
                         }
             return result
         except Exception:

@@ -19,7 +19,7 @@ def zee5_movie(name, id, year):
                                 'name': movies['title'],
                                 'source': 'zee5',
                                 'link': link.format("movies", movies['title'], movies['id']),
-                                'logo': "/static/images/logos/zee5.jpg"
+                                'logo': "/static/images/logos/zee5.png"
                             }
                         else:
                             result = None
@@ -29,7 +29,7 @@ def zee5_movie(name, id, year):
                             'name': movies['title'],
                             'source': 'zee5',
                             'link': link.format("movies", movies['title'], movies['id']),
-                            'logo': "/static/images/logos/zee5.jpg"
+                            'logo': "/static/images/logos/zee5.png"
                         }
             return result
         except Exception:
@@ -65,7 +65,7 @@ def zee5_show(name, id, year):
                                 'name': name,
                                 'source': 'zee5',
                                 'link': link.format("movies", d['title'], d['id']),
-                                'logo': "/static/images/logos/zee5.jpg"
+                                'logo': "/static/images/logos/zee5.png"
                             }
                         else:
                             result = None
@@ -75,7 +75,7 @@ def zee5_show(name, id, year):
                             'name': name,
                             'source': 'zee5',
                             'link': link.format("movies", d['title'], d['id']),
-                            'logo': "/static/images/logos/zee5.jpg"
+                            'logo': "/static/images/logos/zee5.png"
                         }
             return result
         except Exception:

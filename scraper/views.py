@@ -1,6 +1,7 @@
 from django.shortcuts import render
 # import sys
 import os
+from .models import MovieData, SeriesData
 # sys.path.append(os.path.abspath('../websites/crawlers'))
 from websites.crawlers.airtel import airtel_movie, airtel_show
 from websites.crawlers.alt_balaji import alt_balaji_movie, alt_balaji_show
@@ -25,8 +26,9 @@ key = di['tmdb_api_key']
 
 
 class MovieDetails:
-    def __init__(self):
+    def __init__(self, id):
         self.details = {}
+        self.get_data(id)
 
     def get_movies(self, id, year):
         name = self.details['title']
@@ -50,7 +52,7 @@ class MovieDetails:
             'rating': data['vote_average'],
             'no_of_users_rated': data['vote_count'],
             'status': "Yes" if data['status'] == "Released" else "No",
-            'date': data['release_date'],
+            'date': data['release_date'] if data['release_date'] else "0000",
             'summary': data['overview'],
             'genres': genre,
         }
@@ -125,10 +127,39 @@ class MovieDetails:
                         'date': d['release_date'][:4]
                     })
 
+    def save_data(self, id):
+        data = MovieData(id=id, title=self.details['title'], rating=self.details['rating'],
+                         no_of_users_rated=self.details['no_of_users_rated'], status=self.details['status'],
+                         date=self.details['date'], summary=self.details['summary'], genres=self.details['genres'],
+                         images=self.details['images'], cast=self.details['cast'], crew=self.details['crew'],
+                         reviews=self.details['reviews'], recommendations=self.details['recommendations'],
+                         platforms=self.details['platforms'], platforms_present=self.details['platforms_present'])
+        data.save()
+
+    def get_data(self, id):
+        data = MovieData.objects.all()
+        for d in data:
+            if d.id == id:
+                self.details['title'] = d.title
+                self.details['rating'] = d.rating
+                self.details['no_of_users_rated'] = d.no_of_users_rated
+                self.details['status'] = d.status
+                self.details['date'] = d.date
+                self.details['summary'] = d.summary
+                self.details['genres'] = d.genres
+                self.details['images'] = d.images
+                self.details['cast'] = d.cast
+                self.details['crew'] = d.crew
+                self.details['reviews'] = d.reviews
+                self.details['recommendations'] = d.recommendations
+                self.details['platforms'] = d.platforms
+                self.details['platforms_present'] = d.platforms_present
+
 
 class ShowDetails:
-    def __init__(self):
+    def __init__(self, id):
         self.details = {}
+        self.get_data(id)
 
     def get_shows(self, id, year):
         name = self.details['title']
@@ -151,7 +182,7 @@ class ShowDetails:
             'title': data['name'],
             'rating': data['vote_average'],
             'no_of_users_rated': data['vote_count'],
-            'date': data['first_air_date'],
+            'date': data['first_air_date'] if data['first_air_date'] else "0000",
             'summary': data['overview'],
             'genres': genre,
             'seasons': data['number_of_seasons'],
@@ -227,32 +258,64 @@ class ShowDetails:
                         'date': d['first_air_date'][:4]
                     })
 
+    def save_data(self, id):
+        data = SeriesData(id=id, title=self.details['title'], rating=self.details['rating'],
+                         no_of_users_rated=self.details['no_of_users_rated'], date=self.details['date'],
+                         summary=self.details['summary'], genres=self.details['genres'], seasons=self.details['seasons'],
+                         images=self.details['images'], cast=self.details['cast'], crew=self.details['crew'],
+                         reviews=self.details['reviews'], recommendations=self.details['recommendations'],
+                         platforms=self.details['platforms'], platforms_present=self.details['platforms_present'])
+        data.save()
+
+    def get_data(self, id):
+        data = SeriesData.objects.all()
+        for d in data:
+            if d.id == id:
+                self.details['title'] = d.title
+                self.details['rating'] = d.rating
+                self.details['no_of_users_rated'] = d.no_of_users_rated
+                self.details['date'] = d.date
+                self.details['summary'] = d.summary
+                self.details['genres'] = d.genres
+                self.details['seasons'] = d.seasons
+                self.details['images'] = d.images
+                self.details['cast'] = d.cast
+                self.details['crew'] = d.crew
+                self.details['reviews'] = d.reviews
+                self.details['recommendations'] = d.recommendations
+                self.details['platforms'] = d.platforms
+                self.details['platforms_present'] = d.platforms_present
+
 
 def movieDetails(request):
     id = request.GET['id']
     year = request.GET['year']
     type_ = request.GET['type']
     if type_ == "movie":
-        mv = MovieDetails()
-        mv.get_details(id)
-        mv.get_images(id)
-        mv.get_credits(id)
-        mv.get_reviews(id)
-        mv.get_recommendations(id)
-        mv.get_movies(id, year)
+        mv = MovieDetails(id)
+        if not mv.details:
+            mv.get_details(id)
+            mv.get_images(id)
+            mv.get_credits(id)
+            mv.get_reviews(id)
+            mv.get_recommendations(id)
+            mv.get_movies(id, year)
+            mv.save_data(id)
         return render(request, 'details.html', context=mv.details)
     else:
-        sh = ShowDetails()
-        sh.get_details(id)
-        sh.get_images(id)
-        sh.get_credits(id)
-        sh.get_reviews(id)
-        sh.get_recommendations(id)
-        sh.get_shows(id, year)
+        sh = ShowDetails(id)
+        if not sh.details:
+            sh.get_details(id)
+            sh.get_images(id)
+            sh.get_credits(id)
+            sh.get_reviews(id)
+            sh.get_recommendations(id)
+            sh.get_shows(id, year)
+            sh.save_data(id)
         return render(request, 'details.html', context=sh.details)
 
 
 if __name__ == "__main__":
     # get_movies(12345)
-    mv = MovieDetails()
+    mv = MovieDetails(24428)
     mv.get_recommendations(24428)

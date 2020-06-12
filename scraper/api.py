@@ -17,7 +17,7 @@ from websites.idea import idea_search
 from websites.zee5 import zee5_search
 from websites.mx_player import mx_player_search
 from websites.alt_balaji import alt_balaji_search
-from .models import Data, MovieData
+from .models import Data
 from selenium.webdriver.chrome.options import Options
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -116,7 +116,9 @@ class Movie_Data(APIView):
         for i, s in enumerate(search):
             try:
                 year = s.release_date[:4]
-            except AttributeError:
+            except Exception:
+                year = "0000"
+            if year == "":
                 year = "0000"
             if s.poster_path:
                 image = image_url + s.poster_path
@@ -124,7 +126,7 @@ class Movie_Data(APIView):
                 image = image_url + s.backdrop_path
             else:
                 image = default_image_path
-            data.append(MovieData(id=s.id, name=s.title, movie=True, year=year, image=image))
+            data.append(Data(id=s.id, name=s.title, movie=True, year=year, image=image))
         tv = TV()
         search = tv.search(name)
         try:
@@ -134,7 +136,9 @@ class Movie_Data(APIView):
         for s in search:
             try:
                 year = s.first_air_date[:4]
-            except AttributeError:
+            except Exception:
+                year = "0000"
+            if year == "":
                 year = "0000"
             if s.poster_path:
                 image = image_url + s.poster_path
@@ -142,9 +146,9 @@ class Movie_Data(APIView):
                 image = image_url + s.backdrop_path
             else:
                 image = default_image_path
-            data.append(MovieData(id=s.id, name=s.name, movie=False, year=year, image=image))
+            data.append(Data(id=s.id, name=s.name, movie=False, year=year, image=image))
         data.sort(key=lambda x: x.year)
-        serializer = MovieSerializer(data[::-1], many=True)
+        serializer = DataSerializer(data[::-1], many=True)
         print(time.time()-start)
         return Response(serializer.data)
 

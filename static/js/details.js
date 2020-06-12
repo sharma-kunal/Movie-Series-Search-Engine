@@ -59,27 +59,56 @@ function recommendations(id, type) {
     window.location.href = "http://localhost:8090/movie?id=" + id + "&type=" + type;
 }
 
-// $("#swiper-slide-box").hover(function() {
-//   $(this).css({"color": "white", "background": "black", "box-shadow": "0px 10px 40px #3e3c3c7a;"});
-// }, function() {
-//   $(this).css("background-color", "#2A2E43");
-// });
-
-
-// console.log($('.initial').height());
-// console.log($('.detailsSwiper').height());
-
 $('#main_cast').height($('.initial').height()-2*$('.detailsSwiper').height())
 $('#production_cast').height($('.initial').height()-2*$('.detailsSwiper').height())
 $('.details_content3').height($('.initial').height()-2*$('.detailsSwiper').height())
-// castDivHeight = $('.details').height()-2*swiperContainerHeight;
-// $('#main_cast').height(castDivHeight);
-// $('#production_cast').height(castDivHeight);
+$('.details_content1').height($('.initial').height()-2*$('.detailsSwiper').height())
 
-
-// var swiperSlide = document.getElementsByClassName('detailsSwiper')[0].getElementsByClassName('swiper-slide');
-// for(var index = 0; index< swiperSlide.length; index++) {
-//   swiperSlide[index].addEventListener('mouseover',function(e) {
-//       document.getElementById(index).style.backgroundColor = 'blue';
-//   });
-// }
+window.addEventListener('resize', function(e) {
+    var currWidth = window.innerWidth;
+    if (currWidth < 900) {
+        console.log(currWidth);
+        document.getElementsByClassName('images')[0].classList.remove('col-sm-8');
+        document.getElementsByClassName('images')[0].classList.add('col-sm-12');
+        $('.images').width(currWidth);
+        $('.images').height(currWidth/2);
+        $('#active-vertical').height(currWidth/2);
+        $('.carousel-indicators').remove();
+        if (currWidth < 400) {
+            document.getElementById('active-vertical').style.maxWidth = "150px";
+        } else {
+            document.getElementById('active-vertical').style.maxWidth = "200px";
+        }
+        document.getElementById('active-vertical').style.display = "block";
+        document.getElementById('active-vertical').style.margin = "auto";
+//        $('#active-vertical').width(currWidth/2);
+        $('#vertical').height(currWidth/2);
+        if (currWidth < 400) {
+            document.getElementById('vertical').style.maxWidth = "150px";
+        } else {
+            document.getElementById('vertical').style.maxWidth = "200px";
+        }
+        document.getElementById('vertical').style.display = "block";
+        document.getElementById('vertical').style.margin = "auto";
+//        $('#vertical').width(currWidth/2);
+        var swiper3 = new Swiper('.watchOn', {
+              slidesPerView: 3,
+              spaceBetween: 30,
+              pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+              },
+            });
+        var swiper2 = new Swiper('.relatedMoviesSwiper', {
+          slidesPerView: 2,
+          spaceBetween: 20,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+        });
+    } else {
+        document.getElementsByClassName('images')[0].classList.remove('col-sm-12');
+        document.getElementsByClassName('images')[0].classList.add('col-sm-8');
+    }
+})

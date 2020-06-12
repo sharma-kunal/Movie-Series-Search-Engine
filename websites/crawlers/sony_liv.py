@@ -15,7 +15,7 @@ def sony_liv_movie(name, id, year):
                         'name': d['title'],
                         'source': 'sony liv',
                         'link': movie_link.format("full movie", d['referenceId'], d['title']),
-                        'logo': "/static/images/logos/sony_liv.jpeg"
+                        'logo': "/static/images/logos/sony_liv.png"
                     }
             return None
         except Exception:
@@ -46,7 +46,7 @@ def sony_liv_show(name, id, year):
                         'name': d['title'],
                         'source': 'sony liv',
                         'link': movie_link.format("show", d['referenceId'], d['title']),
-                        'logo': "/static/images/logos/sony_liv.jpeg"
+                        'logo': "/static/images/logos/sony_liv.png"
                     }
             return None
         except Exception:

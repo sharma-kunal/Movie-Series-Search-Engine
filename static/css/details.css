@@ -1,189 +1,266 @@
-.main {
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-  margin-left: 10%;
-  margin-right: 10%;
-  margin-top: 20px;
-  width: 80%;
-  margin-bottom: 50px;
-  background-color: #2A2E43;
-}
-
-.whiteFont {
-  color: white;
-}
-
-.initial {
-  padding: 10px;
-  height: 50%;
-}
-
-.images {
-  height: 100%;
-}
-
-.swiper-slide-box {
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.swiper-slide-box:hover, .active-swiper {
-  color:white;
-	background-color: #ffffff26;
-	border-radius: 33px;
-}
-
-
-.details {
-  height: 500px;
-}
-
-.details-complete {
-  margin-top: 20px;
-  width: 100%;
-  position: relative;
-}
-
-.details_content1 {
-  position: absolute;
-}
-
-.details_content2 {
-  position: absolute;
-  visibility: hidden;
-  width: 100%;
-}
-
-.cast_details {
-  height: 70px;
-}
-
-.cast_photo {
-  height: 60px;
-  width: 60px;
-}
-
-#main_cast {
-  width: 100%;
-  overflow: auto;
-  overflow-x: hidden;
-  position: absolute;
-}
-
-#production_cast {
-  width: 100%;
-  overflow: auto;
-  overflow-x: hidden;
-  position: absolute;
-  visibility: hidden;
-}
-
-.detailsSwiper {
-  .swiper-slide {
-    &-active {
-      background-color: #bd1701;
+@media only screen and (min-width: 900px) {
+    .main {
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+      margin-left: 10%;
+      margin-right: 10%;
+      margin-top: 20px;
+      width: 80%;
+      margin-bottom: 50px;
+      background-color: #2A2E43;
     }
-  }
+
+    .whiteFont {
+      color: white;
+    }
+
+    .initial {
+      padding: 10px;
+      height: 50%;
+    }
+
+    .images {
+      height: 100%;
+    }
+
+    #active-vertical {
+        height: 500px;
+        max-width: 400px;
+        display: block;
+        margin: auto;
+    }
+
+    #active-horizontal {
+        height: 500px;
+    }
+
+    #vertical {
+        height: 500px;
+        max-width: 400px;
+        display: block;
+        margin: auto;
+    }
+
+    #horizontal {
+        height: 500px;
+    }
+
+    .swiper-slide-box {
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .swiper-slide-box:hover, .active-swiper {
+      color:white;
+        background-color: #ffffff26;
+        border-radius: 33px;
+    }
+
+
+    .details {
+      height: 500px;
+    }
+
+    .details-complete {
+      margin-top: 20px;
+      width: 100%;
+      position: relative;
+    }
+
+    .details_content1 {
+      position: absolute;
+      overflow: auto;
+      overflow-x: hidden;
+    }
+
+    .details_content2 {
+      position: absolute;
+      visibility: hidden;
+      width: 100%;
+    }
+
+    .cast_details {
+      height: 70px;
+    }
+
+    .cast_photo {
+      height: 60px;
+      width: 60px;
+    }
+
+    #main_cast {
+      width: 100%;
+      overflow: auto;
+      overflow-x: hidden;
+      position: absolute;
+    }
+
+    #production_cast {
+      width: 100%;
+      overflow: auto;
+      overflow-x: hidden;
+      position: absolute;
+      visibility: hidden;
+    }
+
+    .summary_short_screen {
+        display: none;
+    }
+
+    .detailsSwiper {
+      .swiper-slide {
+        &-active {
+          background-color: #bd1701;
+        }
+      }
+    }
+
+    /* .detailsSwiper .swiper-slider:focus {
+        background-color: #fff;
+    } */
+
+    .relatedMoviesSwiper .swiper-slide {
+      background-color: #fff;
+      height: 220px;
+    }
+
+    .related-images {
+      overflow: hidden;
+      box-shadow: 0 1px 10px gray, 0 1px 10px gray;
+    }
+
+    .related-images img {
+      max-height: 100%;
+      max-width: 100%;
+    }
+
+    .watchOn {
+      height: 60px;
+    }
+
+    .watchOn img {
+      height: 60px;
+      width: 100%;
+    }
+
+    .details_content3 {
+      position: absolute;
+      visibility: hidden;
+      overflow: auto;
+      width: 100%;
+      height: 400px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    .user_review_content {
+      margin-left: 20px;
+    }
+
+    .review {
+      width: 100%;
+      border-radius: 20px;
+      border-style: solid;
+      box-shadow: 0 0 5px gray;
+    }
+
+    .review_content {
+      width: 100%;
+    }
+
+    .review_content .row {
+      width: 100%;
+      margin-left: 5px;
+    }
+
+    .review_content p {
+      color: white;
+    }
+
+    .username {
+      height: 20px;
+    }
+
+    .user_review {
+      margin-top: 15px;
+      padding-right: 2px;
+      height: 45px;
+      overflow: hidden;
+    }
+
+    .readMore {
+      margin-top: 5px;
+      margin-bottom: 10px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      background: rgb(0, 0, 0);
+      background: rgba(0, 0, 0, 0.5);
+      color: #f1f1f1;
+      width: 100%;
+      transition: .5s ease;
+      opacity:0;
+      color: white;
+      font-size: 20px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .recommendation-container:hover .overlay {
+      opacity: 1;
+    }
 }
 
-/* .detailsSwiper .swiper-slider:focus {
-    background-color: #fff;
-} */
+@media only screen and (max-width: 900px) {
+    .main {
+      margin: 10px;
+    }
 
-.relatedMoviesSwiper .swiper-slide {
-  background-color: #fff;
-  height: 220px;
-}
+    .whiteFont {
+      color: white;
+    }
 
-.related-images {
-  overflow: hidden;
-  box-shadow: 0 1px 10px gray, 0 1px 10px gray;
-}
+    .images img {
+        max-width: 100%;
+        max-height: 100%;
+    }
 
-.related-images img {
-  max-height: 100%;
-  max-width: 100%;
-}
+    .carousel-indicators, .detailsSwiper, .details_content2, .details_content3, #summary {
+        display: none;
+    }
 
-.watchOn {
-  height: 60px;
-}
+    .details_content1 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 
-.watchOn img {
-  height: 60px;
-  width: 100%;
-}
+    .details {
+        margin-top: 20px;
+    }
 
-.details_content3 {
-  position: absolute;
-  visibility: hidden;
-  overflow: auto;
-  width: 100%;
-  height: 400px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
+    .watchOn {
+        width: 100%;
+    }
 
-.user_review_content {
-  margin-left: 20px;
-}
+    .watchOn img {
+        max-width: 100%;
+        max-height: 100%;
+    }
 
-.review {
-  width: 100%;
-  border-radius: 20px;
-  border-style: solid;
-  box-shadow: 0 0 5px gray;
-}
+    .relatedMoviesSwiper img {
+        max-width: 100%;
+        max-height: 100%;
+    }
 
-.review_content {
-  width: 100%;
-}
-
-.review_content .row {
-  width: 100%;
-  margin-left: 5px;
-}
-
-.review_content p {
-  color: white;
-}
-
-.username {
-  height: 20px;
-}
-
-.user_review {
-  margin-top: 15px;
-  padding-right: 2px;
-  height: 45px;
-  overflow: hidden;
-}
-
-.readMore {
-  margin-top: 5px;
-  margin-bottom: 10px;
-  height: 20px;
-  cursor: pointer;
-}
-
-.overlay {
-  position: absolute;
-  bottom: 0;
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
-  width: 100%;
-  transition: .5s ease;
-  opacity:0;
-  color: white;
-  font-size: 20px;
-  padding: 20px;
-  text-align: center;
-}
-
-.recommendation-container:hover .overlay {
-  opacity: 1;
+    .relatedMoviesSwiper h2 {
+        margin-top: 5px;
+        font-size: 10px;
+    }
 }

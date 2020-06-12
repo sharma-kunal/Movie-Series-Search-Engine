@@ -35,7 +35,7 @@ def vodafone_movie(name, id, year):
                                 'name': d['generalInfo']['title'],
                                 'source': 'vodafone',
                                 'link': movies_link.format(str(d['generalInfo']['_id']), d['generalInfo']['title']),
-                                'logo': "/static/images/logos/vodafone.jpg"
+                                'logo': "/static/images/logos/vodafone.png"
                             }
                         else:
                             result = None
@@ -45,7 +45,7 @@ def vodafone_movie(name, id, year):
                             'name': d['generalInfo']['title'],
                             'source': 'vodafone',
                             'link': movies_link.format(str(d['generalInfo']['_id']), d['generalInfo']['title']),
-                            'logo': "/static/images/logos/vodafone.jpg"
+                            'logo': "/static/images/logos/vodafone.png"
                         }
             return result
         except Exception as e:
@@ -75,7 +75,7 @@ def vodafone_show(name, id, year):
                                 'name': d['generalInfo']['title'],
                                 'source': 'vodafone',
                                 'link': movies_link.format(str(d['generalInfo']['_id']), d['generalInfo']['title']),
-                                'logo': "/static/images/logos/vodafone.jpg"
+                                'logo': "/static/images/logos/vodafone.png"
                             }
                         else:
                             result = None
@@ -85,7 +85,7 @@ def vodafone_show(name, id, year):
                             'name': d['generalInfo']['title'],
                             'source': 'vodafone',
                             'link': movies_link.format(str(d['generalInfo']['_id']), d['generalInfo']['title']),
-                            'logo': "/static/images/logos/vodafone.jpg"
+                            'logo': "/static/images/logos/vodafone.png"
                         }
             return result
         except Exception as e:

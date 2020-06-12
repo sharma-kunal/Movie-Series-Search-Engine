@@ -18,7 +18,7 @@ def jio_movie(name, id, year):
                                 'name': movie['name'],
                                 'source': "jio",
                                 'link': link.format("movies", movie['name'], "0", "0", movie['id']),
-                                'logo': "/static/images/logos/jio.jpg"
+                                'logo': "/static/images/logos/jio.png"
                             }
                         else:
                             result = None
@@ -28,7 +28,7 @@ def jio_movie(name, id, year):
                             'name': movie['name'],
                             'source': "jio",
                             'link': link.format("movies", movie['name'], "0", "0", movie['id']),
-                            'logo': "/static/images/logos/jio.jpg"
+                            'logo': "/static/images/logos/jio.png"
                         }
             return result
         except KeyError:
@@ -71,7 +71,7 @@ def jio_show(name, id, year):
                         'name': movie['name'],
                         'source': "jio",
                         'link': link.format("tv", movie['name'], "1", "1", movie['id']),
-                        'logo': "/static/images/logos/jio.jpg"
+                        'logo': "/static/images/logos/jio.png"
                     }
             return None
         except KeyError:

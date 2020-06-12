@@ -31,7 +31,7 @@ def hotstar_movie(name, id, year):
                                 'name': d['title'],
                                 'source': "hotstar",
                                 "link": link + f"/movies/{d['title']}/{d['contentId']}",
-                                'logo': "/static/images/logos/hotstar.jpg"
+                                'logo': "/static/images/logos/hotstar.png"
                             }
                         else:
                             result = None
@@ -41,7 +41,7 @@ def hotstar_movie(name, id, year):
                             'name': d['title'],
                             'source': "hotstar",
                             "link": link + f"/movies/{d['title']}/{d['contentId']}",
-                            'logo': "/static/images/logos/hotstar.jpg"
+                            'logo': "/static/images/logos/hotstar.png"
                         }
             return result
         except Exception:
@@ -74,7 +74,7 @@ def hotstar_show(name, id, year):
                         'name': d['title'],
                         'source': "hotstar",
                         "link": link + f"/tv/{d['title']}/{d['contentId']}",
-                        'logo': "/static/images/logos/hotstar.jpg"
+                        'logo': "/static/images/logos/hotstar.png"
                     }
             return None
         except Exception:

@@ -60,17 +60,17 @@
                     {% if forloop.counter == 1 %}
                     <div class="carousel-item active">
                         {% if image.vertical %}
-                            <img class="d-block w-100" src="{{ image.image }}" alt="First slide" style="height: 500px; max-width: 400px;display: block;margin:auto;">
+                            <img id="active-vertical" class="d-block w-100" src="{{ image.image }}" alt="First slide">
                         {% else %}
-                            <img class="d-block w-100" src="{{ image.image }}" alt="First slide" style="height: 500px;">
+                            <img id="active-horizontal" class="d-block w-100" src="{{ image.image }}" alt="First slide">
                         {% endif %}
                     </div>
                     {% else %}
                     <div class="carousel-item">
                         {% if image.vertical %}
-                            <img class="d-block w-100" src="{{ image.image }}" alt="First slide" style="height: 500px; max-width: 400px;display: block;margin:auto;">
+                            <img id="vertical" class="d-block w-100" src="{{ image.image }}" alt="First slide">
                         {% else %}
-                            <img class="d-block w-100" src="{{ image.image }}" alt="First slide" style="height: 500px;">
+                            <img id="horizontal" class="d-block w-100" src="{{ image.image }}" alt="First slide">
                         {% endif %}
                     </div>
                     {% endif %}
@@ -119,9 +119,9 @@
                 {% else %}
                 <h3 class="whiteFont">Released: {{ status }}</h3>
                 {% endif %}
-              <h4 class="whiteFont">Release Date: {{ date }}</h4>
+              <h4 class="whiteFont">{{ date }}</h4>
                 <br>
-                <p class="whiteFont">{{ summary }}</p>
+                <p id="summary" class="whiteFont">{{ summary }}</p>
             </div>
             <div class="details_content2" id="2">
               <div class="swiper-container detailsSwiper"  style="height: 30px;">
@@ -189,9 +189,10 @@
           </div>
         </div>
       </div>
-      <h3 class="whiteFont" style="margin-left: 10px;">Watch On:</h3>
+
+      <h3 id="watchonheading" class="whiteFont">Watch On:</h3>
         {% if platforms_present %}
-          <div class="swiper-container watchOn" style="padding: 10px;">
+          <div class="swiper-container watchOn">
             <div class="swiper-wrapper">
                 {% for platform in platforms %}
                     {% if platform != None %}
@@ -209,12 +210,13 @@
           Sorry! No Streaming Services Found..
         </div>
         {% endif %}
+
         {% if seasons %}
-        <h3 class="whiteFont" style="margin-left: 10px;">Recommended Shows</h3>
+        <h3 class="whiteFont">Recommended Shows</h3>
         {% else %}
-        <h3 class="whiteFont" style="margin-left: 10px;">Recommended Movies</h3>
+        <h3 class="whiteFont">Recommended Movies</h3>
         {% endif %}
-      <div class="swiper-container relatedMoviesSwiper" style="padding: 10px;">
+      <div class="swiper-container relatedMoviesSwiper">
         <div class="swiper-wrapper">
             {% for recommendation in recommendations %}
                 <div class="swiper-slide">

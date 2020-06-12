@@ -27,7 +27,7 @@ def airtel_movie(name, id, year):
                                 'name': d['title'],
                                 'source': "airtel",
                                 'link': link.format("movies", d['title'], d['id']),
-                                'logo': "/static/images/logos/airtel.jpeg"
+                                'logo': "/static/images/logos/airtel.png"
                             }
                         else:
                             result = None
@@ -37,7 +37,7 @@ def airtel_movie(name, id, year):
                             'name': d['title'],
                             'source': "airtel",
                             'link': link.format("movies", d['title'], d['id']),
-                            'logo': "/static/images/logos/airtel.jpeg"
+                            'logo': "/static/images/logos/airtel.png"
                         }
             return result
         except Exception:
@@ -76,7 +76,7 @@ def airtel_show(name, id, year):
                                 'name': d['title'],
                                 'source': "airtel",
                                 'link': link.format("tv-shows", d['title'], d['id']),
-                                'logo': "/static/images/logos/airtel.jpeg"
+                                'logo': "/static/images/logos/airtel.png"
                             }
                         else:
                             result = None
@@ -86,7 +86,7 @@ def airtel_show(name, id, year):
                             'name': d['title'],
                             'source': "airtel",
                             'link': link.format("tv-shows", d['title'], d['id']),
-                            'logo': "/static/images/logos/airtel.jpeg"
+                            'logo': "/static/images/logos/airtel.png"
                         }
             return result
         except Exception:
@@ -114,4 +114,4 @@ def airtel_show(name, id, year):
 
 if __name__ == "__main__":
     print(airtel_movie("queen", 12345, "2013"))
-    print(airtel_show("mismatch", 12345, "2018"))
+    print(airtel_show("Metro Park: Quarantine Edition", 12345, "2020"))
