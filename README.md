@@ -40,9 +40,18 @@ python manage.py runserver 127.0.0.1:8090
 ```
 
 **NOTE**
-I have made the server to run on the port 8090, if you want to change the port, you also need to change the port in the file `client/index.js` in function `search` on line 34.
+I have made the server to run on the port 8090, if you want to change the port, you will also need to change the port in the below files
+  1. `client/index.js` in function `search` on line 34.
 
 ![Port Image](https://github.com/sharma-kunal/Movie-Series-Search-Engine/blob/master/readmeData/port.png)
+
+  2. `client/index/js` in function `callbackFunc` on line 133.
+
+![Port Image 2](https://github.com/sharma-kunal/Movie-Series-Search-Engine/blob/master/readmeData/port2.png)
+
+  3. `templates/details.html` on line 225.
+
+![Port Image 3](https://github.com/sharma-kunal/Movie-Series-Search-Engine/blob/master/readmeData/port3.png)
 
 5. Now just run the file `client/index.html` and the project is up and running.
 
